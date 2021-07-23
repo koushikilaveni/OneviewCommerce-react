@@ -1,0 +1,1 @@
+Project implemented according to requirements from https://github.com/OneviewCommerce/typescript-react-redux-test
