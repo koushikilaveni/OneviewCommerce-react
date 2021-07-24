@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
-import { Table, TableConfigItem } from '../../components/table/Table';
+import Table, { TableConfigItem } from '../../components/table/Table';
 import { useAppSelector } from '../../config/redux/hooks';
 import { thunkAsyncAction } from '../../config/redux/utils';
 import { KeyValuePair } from '../../types';
@@ -13,7 +13,7 @@ const config: TableConfigItem[] = [
 
 type UserPostsPageProps = { } & RouteComponentProps;
 
-export const UserPostsPage: FC<UserPostsPageProps> = ({ history, match }) => {
+const UserPostsPage: FC<UserPostsPageProps> = ({ history, match }) => {
   const dispatch = useDispatch();
   const { loading, data, selectedUser } = useAppSelector(state => state.posts);
   useEffect(() => {
@@ -40,3 +40,5 @@ export const UserPostsPage: FC<UserPostsPageProps> = ({ history, match }) => {
     </div>
   )
 }
+
+export default UserPostsPage;
